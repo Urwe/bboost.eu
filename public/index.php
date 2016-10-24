@@ -3,7 +3,9 @@ define('ROOT', dirname(__DIR__));
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-class App extends Application
+
+
+class App extends Silex\Application
 {
     use Silex\Application\TwigTrait;
     use Silex\Application\UrlGeneratorTrait;
@@ -17,6 +19,10 @@ class App extends Application
 $app = new App;
 
 $app['debug'] = true;
+
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => ROOT . '/layouts'
+));
 
 $app->get('/', function () use ($app) {
     return $app->render('main.twig');
