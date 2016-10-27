@@ -25,7 +25,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 ));
 
 $app->get('/', function () use ($app) {
-    return $app->render('main.twig');
+    return file_get_contents(ROOT.'/html'.'/index.html');
 })->bind('index');
 
 $app->run();
