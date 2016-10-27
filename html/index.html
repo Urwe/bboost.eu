@@ -17,9 +17,9 @@
     </div>
 
 
-    <div class="webpage-navigation">
+    <div class="webpage-navigation" ng-controller="contentCtrl as bboost">
 
-        <button class="webpage-nav-button">Home</button>
+        <button class="webpage-nav-button" onclick="zmiana()">Home</button>
         <button class="webpage-nav-button">Boosting</button>
         <button class="webpage-nav-button">Guides</button>
         <button class="webpage-nav-button">News</button>
@@ -32,7 +32,13 @@
 
 </div>
 <div class="main-content" ng-controller="contentCtrl as bboost">
-    <home-page-content></home-page-content>
+
+
+    <div ng-include="{"></div>
+
+
+    <home-page-content ng-show="false"></home-page-content>
+    <boosting-page-content ng-show="bboost.site.boosting"></boosting-page-content>
 </div>
 
 
