@@ -1,0 +1,8 @@
+<div ng-controller="faqCtrl as bboost" class="faqContent">
+    <div ng-repeat="question in bboost.questions">
+        <h3>{{question.content}}</h3>
+        <div>
+            <p>{{question.answer}}</p>
+        </div>
+    </div>
+</div>

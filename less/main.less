@@ -1,23 +1,16 @@
-@bg-theme-color:#333;
-@side-nav-menu-margins:20px;
+@import url("variables.less");
+@import url("classes.less");
+@import url("animations.less");
 
-.center{
-  margin-left: auto;
-  margin-right: auto;
-}
-.border{
-  border:1px solid red;
-}
-.underline{
-  text-decoration: underline;
-}
+
+
 
 html{
   height:100%;
 }
 
 body{
-  color: white;
+  color: @sand;
   width: 100%;
   max-width: 100%;
   height: 100%;
@@ -28,72 +21,140 @@ body{
 
 
   .side-nav-menu{
+    position: relative;
     width: 200px;
     height: 100%;
-    -webkit-background-image: url("../img/black-bg-2.jpg");
-    -moz-background-image: url("../img/black-bg-2.jpg");
-    -o-background-image: url("../img/black-bg-2.jpg");
-    background: url("../img/black-bg-2.jpg") no-repeat center;
+    background: url("../img/black-bg-2.jpg")no-repeat center ;
     background-size: cover;
     float: left;
     .company-logo{
       img{
         width: 80%;
-        height: 160px;
         .center;
         display: block;
-        margin-top:@side-nav-menu-margins;
+        margin-top:@side-nav-menu-margins * 2;
       }
     }
     .webpage-navigation{
       .center;
       width: 150px;
-      margin-top:@side-nav-menu-margins;
-      border-top:1px solid white;
-      border-bottom: 1px solid white;
-      padding-top: @side-nav-menu-margins;
-      padding-bottom: @side-nav-menu-margins;
+      margin: @side-nav-menu-margins  0 0 0;
+      width: 100%;
 
 
       .webpage-nav-button{
-        background: transparent;
+        height: 50px;
         border: none;
+        border-bottom:1px solid @orange;
+        background: linear-gradient(to right, transparent 50%, @orange 50%);
+        background-size: 200% 100%;
+        background-position:left bottom;
         text-align: center;
-        line-height: 30px;
-        font-size: 14px;
+        line-height: 20px;
+        font-size: 17px;
         width: 100%;
+        font-family: 'Oswald', sans-serif;
+      }
+      .webpage-nav-button:hover{
+        animation: navbar-button-animation 0.5s forwards;
+        -webkit-animation: navbar-button-animation 0.5s forwards;
+        -webkit-animation-timing-function: ease;
+        text-decoration: none;
+        color: white;
+      }
+      .boosting-link{
+        color: @orange;
       }
     }
-  }
-
-
-
-
-
-  .main-content{
-    height: 100%;
-    max-height: 100%;
-    margin-left: 200px;
-    .border;
+    .social{
+      position: absolute;
+      bottom: @side-nav-menu-margins;
+      padding-left: 47px;
+      padding-right: 48px;
+      color: @orange;
+      .center;
+      .social-button{
+        display: block;
+        padding: 0;
+        margin: 5px;
+        width: 25px;
+        height: 25px;
+        border: 2px solid @orange;
+        font-size: 16px;
+        position: relative;
+        cursor: pointer;
+        i{
+          display: block;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
   }
 }
 
 //region main-page
-.main-page-option{
-  width: 33.33%;
+.main-content{
   height: 100%;
-}
-.main-page-option:nth-of-type(1){
-  background-color: greenyellow;
-  float: left;
-}
-.main-page-option:nth-of-type(2){
-  background-color: lightcyan;
-  float: left;
-}
-.main-page-option:nth-of-type(3){
-  background-color: lightpink;
-  float: left;
+  max-height: 100%;
+  margin-left: 200px;
+  color: red;
+  div{
+    height: 100%;
+    position: relative;
+    .col-sm-4::after{
+      position: absolute;
+      background-image: url("../img/logo.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 189px auto;
+      content:"";
+      width: 189px;
+      height: 189px;
+      top:50%;
+      left:50%;
+      transform:  translate(-50%,-50%);
+      background-color: rgba(0,0,0,0.6);
+    }
+    .col-sm-4:nth-of-type(1)::after{
+      animation-name: boosting-options;
+      animation-duration: 2s;
+      -webkit-animation-timing-function: ease;
+    }
+    .col-sm-4:nth-of-type(2)::after{
+      animation-name: boosting-options;
+      animation-duration: 2.5s;
+      -webkit-animation-timing-function: ease;
+    }
+    .col-sm-4:nth-of-type(3)::after{
+      animation-name: boosting-options;
+      animation-duration: 3s;
+      -webkit-animation-timing-function: ease;
+    }
+    .tab1{
+
+      background: url("../img/Katarina.jpg") no-repeat center ;
+      background-size: cover;
+    }
+    .tab2{
+      background: url("../img/Ashe.jpg") no-repeat center;
+      background-size: cover;
+    }
+    .tab3{
+      background: url("../img/Yasuo.jpg") no-repeat center ;
+      background-size: cover;
+    }
+  }
 }
 //endregion
 
+//region fag
+.main-content{
+  .faqContent{
+    height: auto;
+  }
+}
+
+//endregion

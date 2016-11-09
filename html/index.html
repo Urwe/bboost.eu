@@ -8,37 +8,41 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/59ea93251c.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/4.2.6/sweetalert2.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Lato|Montserrat|Oswald|Roboto|Rubik" rel="stylesheet">
 </head>
-<body>
+<body ng-controller="teamplatesCtrl as bboost" ng-model="template">
 <div class="side-nav-menu" role="navigation">
     <div class="company-logo">
-        <img id="side-nav-company-logo" src="img/black.jpg" alt="bboost.eu elo boosting company logo">
+        <img id="side-nav-company-logo" src="img/logo.png" alt="bboost.eu elo boosting company logo">
     </div>
 
 
-    <div class="webpage-navigation" ng-controller="contentCtrl as bboost">
+    <div class="webpage-navigation" >
 
-        <button class="webpage-nav-button" onclick="zmiana()">Home</button>
-        <button class="webpage-nav-button">Boosting</button>
-        <button class="webpage-nav-button">Guides</button>
-        <button class="webpage-nav-button">News</button>
-        <button class="webpage-nav-button">FAQ</button>
-        <button class="webpage-nav-button">Rules</button>
-        <button class="webpage-nav-button">Contact</button>
-        <button class="webpage-nav-button">About Us</button>
-
+        <button class="webpage-nav-button boosting-link" ng-click="template=templates[0]">Boosting</button>
+        <button class="webpage-nav-button" ng-click="template=templates[2]">Guides</button>
+        <button class="webpage-nav-button" ng-click="template=templates[3]">News</button>
+        <button class="webpage-nav-button" ng-click="template=templates[4]">FAQ</button>
+        <button class="webpage-nav-button" ng-click="template=templates[6]">Contact</button>
+        <button class="webpage-nav-button no-border" ng-click="template=templates[7]">About Us</button>
+    </div>
+    <div class="col-xs-12 social">
+        <div class="col-xs-4 social-button">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-4 social-button">
+            <i class="fa fa-skype" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-4 social-button">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
     </div>
 
 </div>
-<div class="main-content" ng-controller="contentCtrl as bboost">
-
-
-    <div ng-include="{"></div>
-
-
-    <home-page-content ng-show="false"></home-page-content>
-    <boosting-page-content ng-show="bboost.site.boosting"></boosting-page-content>
+<div class="main-content">
+    <div  ng-include="template.url"></div>
 </div>
 
 
@@ -48,6 +52,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/main.js"></script>
