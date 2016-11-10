@@ -1,38 +1,36 @@
 var app = angular.module('bboost',[]);
 
-    app.controller('contentCtrl',function(){
-        this.site=currentTab;
+
+        app.controller('teamplatesCtrl', ['$scope', function($scope) {
+         $scope.templates =
+            [
+                { name: 'home.html', url:'html/home.html'},
+                { name: 'boosting.html', url:'html/boosting.html'},
+                { name: 'guides.html', url:'html/guides.html'},
+                { name: 'news.html', url:'html/news.html'},
+                { name: 'faq.html', url:'html/faq.html'},
+                { name: 'rules.html', url:'html/rules.html'},
+                { name: 'contact.html', url:'html/contact.html'}
+                ];
+        $scope.template = $scope.templates[0];
+        }]);
+
+
+    app.controller('faqCtrl',function(){
+        this.questions=faq;
     });
 
-
-
-    app.controller('scopeCtrl',['$scope', function($scope){
-        $scope.activeTab='html/boosting.html';
-    }]);
-
-
-    var currentTab = {
-        home:true,
-        boosting:false
-    };
-
-    function zmiana(){
-        currentTab.home=false;
-        currentTab.boosting=true;
-        console.log(currentTab.home);
-    }
-
-
-     app.directive('homePageContent',function(){
-         return{
-             restrict:'E',
-             templateUrl:'html/home.html'
-         }
-     });
-
-    app.directive('boostingPageContent', function(){
-        return{
-            restrict:'E',
-            templateUrl:'html/boosting.html'
+    var faq = [
+        {
+            content:"How it works?",
+            answer:"Quite well"
+        },
+        {
+            content:"How it looks",
+            answer:"it looks pretty good"
+        },
+        {
+            content:"How you doing, man?",
+            answer:"Oh greate"
         }
-    });
+    ];
