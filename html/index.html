@@ -21,12 +21,11 @@
 
     <div class="webpage-navigation" >
 
-        <button class="webpage-nav-button boosting-link" ng-click="template=templates[0]">Boosting</button>
-        <button class="webpage-nav-button" ng-click="template=templates[2]">Guides</button>
-        <button class="webpage-nav-button" ng-click="template=templates[3]">News</button>
+        <button class="webpage-nav-button" ng-click="template=templates[0]">Home</button>
+        <button class="webpage-nav-button boosting-link" ng-click="template=templates[1]">Boosting</button>
         <button class="webpage-nav-button" ng-click="template=templates[4]">FAQ</button>
-        <button class="webpage-nav-button" ng-click="template=templates[6]">Contact</button>
-        <button class="webpage-nav-button no-border" ng-click="template=templates[7]">About Us</button>
+        <button class="webpage-nav-button" ng-click="template=templates[5]">Contact</button>
+        <button class="webpage-nav-button" ng-click="template=templates[7]">About Us</button>
     </div>
     <div class="col-xs-12 social">
         <div class="col-xs-4 social-button">
@@ -42,7 +41,7 @@
 
 </div>
 <div class="main-content">
-    <div  ng-include="template.url"></div>
+    <div class="home"  ng-include="template.url"></div>
 </div>
 
 

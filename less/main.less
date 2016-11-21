@@ -38,7 +38,7 @@ body{
     .webpage-navigation{
       .center;
       width: 150px;
-      margin: @side-nav-menu-margins  0 0 0;
+      margin: @side-nav-menu-margins*2  0 0 0;
       width: 100%;
 
 
@@ -54,6 +54,9 @@ body{
         font-size: 17px;
         width: 100%;
         font-family: 'Oswald', sans-serif;
+      }
+      .webpage-nav-button:last-of-type{
+        border-bottom: none;
       }
       .webpage-nav-button:hover{
         animation: navbar-button-animation 0.5s forwards;
@@ -156,5 +159,20 @@ body{
     height: auto;
   }
 }
+
+//endregion
+
+//region boosting
+
+.boosting-box{
+ width: 90%;
+  min-width: 800px;
+  max-height: 100%;
+  padding-top: @side-nav-menu-margins;
+  .center;
+  .border;
+
+}
+
 
 //endregion
