@@ -10,6 +10,7 @@ html{
 }
 
 body{
+  font-family: 'Oswald', sans-serif;
   color: @sand;
   width: 100%;
   max-width: 100%;
@@ -21,7 +22,9 @@ body{
 
 
   .side-nav-menu{
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 200px;
     height: 100%;
     background: url("../img/black-bg-2.jpg")no-repeat center ;
@@ -104,10 +107,14 @@ body{
   max-height: 100%;
   margin-left: 200px;
   color: red;
-  div{
+  .home{
     height: 100%;
     position: relative;
-    .col-sm-4::after{
+    .tab{
+      height: 100%;
+      position: relative;
+    }
+    .tab::after{
       position: absolute;
       background-image: url("../img/logo.png");
       background-repeat: no-repeat;
@@ -121,17 +128,17 @@ body{
       transform:  translate(-50%,-50%);
       background-color: rgba(0,0,0,0.6);
     }
-    .col-sm-4:nth-of-type(1)::after{
+    .tab:nth-of-type(1)::after{
       animation-name: boosting-options;
       animation-duration: 2s;
       -webkit-animation-timing-function: ease;
     }
-    .col-sm-4:nth-of-type(2)::after{
+    .tab:nth-of-type(2)::after{
       animation-name: boosting-options;
       animation-duration: 2.5s;
       -webkit-animation-timing-function: ease;
     }
-    .col-sm-4:nth-of-type(3)::after{
+    .tab:nth-of-type(3)::after{
       animation-name: boosting-options;
       animation-duration: 3s;
       -webkit-animation-timing-function: ease;
@@ -154,10 +161,51 @@ body{
 //endregion
 
 //region fag
-.main-content{
-  .faqContent{
-    height: auto;
+
+
+.faqContent{
+
+  background: url("../img/minion.jpg")no-repeat center ;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100%;
+  color: @dark;
+  padding: 15px;
+
+  .faq-area{
+    .center;
+    max-width: 100%;
+    width: 740px;
+    margin-top: 20px;
+    padding:20px;
+    background-color: rgba(255,255,255,0.7);
+    color: @dark;
+    h1{
+      text-align: center;
+      display: block;
+      margin-bottom: @side-nav-menu-margins*2;
+    }
+    h2{
+      text-indent: 20px;
+      color: @orange;
+    }
+    h3{
+      cursor: pointer;
+    }
+    .answer{
+      background-color: rgba(255,255,255,0.95);
+      padding: 8px;
+    }
+
   }
+}
+
+
+.answer{
+  display: none;
+}
+.selected {
+  display: block;
 }
 
 //endregion
@@ -165,14 +213,153 @@ body{
 //region boosting
 
 .boosting-box{
- width: 90%;
-  min-width: 800px;
-  max-height: 100%;
-  padding-top: @side-nav-menu-margins;
-  .center;
-  .border;
+  background: url("../img/minion.jpg")no-repeat center ;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100%;
+  color: @dark;
+  padding: 15px;
 
+  .boost-area{
+    margin-top: 40px;
+    .center;
+    width: 988px;
+    max-width: 100%;
+
+    button{
+      width: 25%;
+      display: block;
+      float: left;
+      height: 120px;
+      background-color: rgba(255,255,255,0.3);
+      border:  1px solid rgba(255,255,255,0.9);
+      border-radius: 20px 20px 0 0;
+      font-size: 16px;
+      span{
+        font-size: 32px;
+      }
+    }
+    .boosting-content{
+      width: 988px;
+      background-color: rgba(255,255,255,0.9) ;
+      max-width: 100%;
+    }
+  }
 }
 
 
 //endregion
+
+//region contact
+
+.contact-box{
+
+
+  background: url("../img/minion.jpg")no-repeat center ;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100%;
+  color: @dark;
+  padding: 15px;
+
+  .box-area{
+    form{
+      box-sizing:border-box;
+      display: block;
+      background-color: rgba(255,255,255,0.4);
+      padding-bottom: 25px;
+      label{
+        width: 70%;
+        min-width: 200px;
+        display: block;
+        .center;
+      }
+      input{
+        width: 90%;
+        min-width: 200px;
+        display: block;
+        .center;
+      }
+      textarea{
+        width: 90%;
+        min-width: 200px;
+        display: block;
+        .center;
+        min-height: 182px;
+      }
+      button{
+        .center;
+        margin-top: 20px;
+        width: 75px;
+        height: 30px;
+        background: @dark;
+        border: none;
+        color: white;
+        display: block;
+        position: relative;
+      }
+      button:after{
+        position: absolute;
+        top:50%;
+        right:-30px;
+        transform: translateY(-50%) rotate(90deg);
+        content: "";
+        width: 0;
+        height: 0;
+        border-top:15px solid transparent;
+        border-right:15px solid transparent;
+        border-left:15px solid transparent;
+        border-bottom: 15px solid @dark;
+      }
+      button:before{
+        position: absolute;
+        top:50%;
+        right:-6px;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+        transform:translateY(-50%) rotate(45deg);
+        z-index: 2;
+      }
+    }
+    .center;
+    max-width: 100%;
+    width: 740px;
+    margin-top: 20px;
+    padding:20px;
+    .social-box{
+      width: 33.333%;
+      float: left;
+      .center;
+      text-align: center;
+
+      .fa-skype{
+        color: @skype;
+     }
+      .fa-skype:hover, .fa-facebook:hover, .fa-envelope:hover{
+        color: @orange;
+      }
+      .fa-facebook{
+        color: @fb;
+      }
+    }
+    h1{
+      text-align: center;
+      color: rgb(213,214,210);
+    }
+    .column{
+      padding: 25px 0 25px 0 ;
+      width: 50%;
+      float: left;
+    }
+    .column:first-of-type{
+      border-right: 1px solid @dark;
+    }
+  }
+}
+
+//endregion
+
+

@@ -1,14 +1,30 @@
-<div class="boosting-box" >
-    <div class="col-sm-3">
-        <button>Division <br/> Boost</button>
-    </div>
-    <div class="col-sm-3">
-        <button>DuoQ <br/> Boost</button>
-    </div>
-    <div class="col-sm-3">
-        <button>Placement <br/> Games</button>
-    </div>
-    <div class="col-sm-3">
-        <button>Wins <br/> Boost</button>
+<div class="boosting-box">
+    <div class="boost-area" ng-controller="boostCtrl as bboost">
+            <button ng-click="changeTab('division')">
+                <span class="glyphicon glyphicon-fire big" aria-hidden="true"></span>
+                <br/>
+                Division <br/> Boost</button>
+
+            <button ng-click="changeTab('duoq')">
+                <span class="glyphicon glyphicon-king big" aria-hidden="true"></span>
+                <br/>
+                DuoQ <br/> Boost</button>
+
+            <button ng-click="changeTab('placement')">
+                <span class="glyphicon glyphicon-piggy-bank big" aria-hidden="true"></span>
+                <br/>
+                Placement <br/> Games</button>
+
+            <button ng-click="changeTab('perwin')">
+                <span class="glyphicon glyphicon-flash big" aria-hidden="true"></span>
+                <br/>
+                Wins <br/> Boost</button>
+        <div class="clearfix"></div>
+        <div class="boosting-content">
+            <division-boosting ng-show="tab==='division'"></division-boosting>
+            <duoq-boosting ng-show="tab==='duoq'"></duoq-boosting>
+            <per-win-boosting ng-show="tab==='perwin'"></per-win-boosting>
+            <placement-boosting ng-show="tab==='placement'"></placement-boosting>
+        </div>
     </div>
 </div>
