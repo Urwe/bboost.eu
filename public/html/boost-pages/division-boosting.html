@@ -1,11 +1,23 @@
-<h2>League Boost</h2>
-
-
-
-<div class="col-sm-6">
-    <div class="col-sm-6"></div>
-    <div class="col-sm-6"></div>
-</div>
-<div class="col-sm-6">
+<div class="col-xs-12" ng-controller="divisionBoostCtrl as bboost">
+    <h1>Division boost</h1>
+    <div class="col-sm-6">
+        <div class="col-sm-6">
+            <img src="" alt="elo boost current division">
+            <select>
+                <option ng-repeat="league in bboost.leagues">
+                    {{league.league}}
+                </option>
+            </select>
+            <select>
+                <option ng-repeat="division in bboost.divisions">
+                    {{division.division}}
+                </option>
+            </select>
+        </div>
+        <div class="col-sm-6">
+            <img src="" alt="elo boost desired division">
+        </div>
+    </div>
+    <div class="col-sm-6">
 
 </div>

@@ -110,3 +110,50 @@ app.controller('boostCtrl',function($scope){
     };
 });
 //endregion
+
+
+
+    app.controller('divisionBoostCtrl',function($scope){
+
+        this.leagues = leagues;
+        this.divisions = divisions;
+    });
+
+    var leagues = [
+        {
+            league:'Diamond'
+        },
+        {
+            league:'Platinum'
+        },
+        {
+            league:'Gold'
+        },
+        {
+            league:'Silver'
+        },
+        {
+            league:'Bronze'
+        }
+    ];
+
+    var divisions = [
+        {
+            division:'Division I'
+        },
+        {
+            division:'Division II'
+        },
+        {
+            division:'Division III'
+        },
+        {
+            division:'Division IV'
+        },
+        {
+            division:'Division V'
+        }
+    ];
+
+
+
