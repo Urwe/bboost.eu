@@ -117,42 +117,65 @@ app.controller('boostCtrl',function($scope){
 
         this.leagues = leagues;
         this.divisions = divisions;
+
+
+        $scope.price= function(){
+            console.log('dasd');
+        };
     });
 
     var leagues = [
         {
-            league:'Diamond'
+            league:'Diamond',
+            value:4
         },
         {
-            league:'Platinum'
+            league:'Platinum',
+            value:3
         },
         {
-            league:'Gold'
+            league:'Gold',
+            value:2
         },
         {
-            league:'Silver'
+            league:'Silver',
+            value:1
         },
         {
-            league:'Bronze'
+            league:'Bronze',
+            value:0
         }
     ];
 
     var divisions = [
         {
-            division:'Division I'
+            division:'Division I',
+            value:4
         },
         {
-            division:'Division II'
+            division:'Division II',
+            value:3
         },
         {
-            division:'Division III'
+            division:'Division III',
+            value:2
         },
         {
-            division:'Division IV'
+            division:'Division IV',
+            value:1
         },
         {
-            division:'Division V'
+            division:'Division V',
+            value:0
         }
+    ];
+
+    var prices = [
+        [0,11,11,11,11],
+        [13,15,15,15,15],
+        [18,22,22,24,24],
+        [26,32,34,36,39],
+        [48,59,74,89,119]
     ];
 
 
