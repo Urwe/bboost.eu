@@ -1,1 +1,28 @@
-placement
+<div class="col-xs-12" ng-controller="placementBoostCtrl as placementCtrl">
+
+    <h1 class="text-center">Placement boost</h1>
+
+    <div class="col-sm-6">
+        <div class="col-sm-6">
+            <img ng-src="img/icons/{{sLigImg}}.png">
+
+            <select ng-change="calculatePrice()" class="boost-select" ng-model="sLig"  ng-options="placementLeagues.league for placementLeagues in leagues"></select>
+
+        </div>
+        <div class="col-sm-6">
+            <div  class="numberOfGames">{{wins}}</div>
+            <div onchange="calculatePrice()"  slider config="sliderConfig" model="wins"></div>
+
+        </div>
+    </div>
+    <div class="col-sm-6">
+        Price: {{price}}
+
+
+    </div>
+
+
+
+</div>
+<div class="clearfix"></div>
+

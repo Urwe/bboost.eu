@@ -17,6 +17,10 @@ $(document).ready(function () {
         $( ".faqContent").accordion();
     } );
 
+    var test = $('#test').value;
+
+    console.log(test);
+
 
 
 

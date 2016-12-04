@@ -1,42 +1,33 @@
-<div  class="col-xs-12" ng-controller="divisionBoostCtrl as bboost">
+<div class="col-xs-12">
+    Divisions
 
-    <h2 class="boostHeader">Division boosting</h2>
-
-    <div class="col-sm-6">
+    <form ng-controller="divisionBoostCtrl as boostCtrl">
         <div class="col-sm-6">
-            <img class="center" src="" alt="elo boost current division">
-            <h4 class="text-center">CURRENT DIVISION</h4>
-            <select class="boost-select">
-                <option ng-repeat="league in bboost.leagues" value="{{league.value}}">
-                    {{league.league}}
-                </option>
-            </select>
-            <select class="boost-select">
-                <option ng-repeat="division in bboost.divisions" value="{{division.value}}">
-                    {{division.division}}
-                </option>
-            </select>
+            <div class="col-sm-6">
+
+                <img ng-src="img/icons/{{sLigImg}}.png">
+
+                <select ng-change="calculatePrice()" class="boost-select" ng-model="currentLeague" ng-options="league.league for league in leagues"></select>
+
+                <select ng-change="calculatePrice()" class="boost-select" ng-model="currentDivision" ng-options="division.division for division in divisions"></select>
+
+                <select ng-change="calculatePrice()" class="boost-select" ng-model="divPoints" ng-options="points.points for points in points"></select>
+            </div>
+            <div class="col-sm-6">
+
+                <img ng-src="img/icons/{{eLigImg}}.png">
+
+                <select ng-change="calculatePrice()" class="boost-select" ng-model="desireLeague" ng-options="league.league for league in leagues"></select>
+
+                <select ng-change="calculatePrice()" class="boost-select" ng-model="desireDivision" ng-options="division.division for division in divisions"></select>
+            </div>
         </div>
         <div class="col-sm-6">
-            <img class="center" src="" alt="elo boost desired division">
-            <h4 class="text-center">DESIRED DIVISION</h4>
-            <select class="boost-select">
-                <option ng-repeat="league in bboost.leagues" value="{{league.value}}">
-                    {{league.league}}
-                </option>
-            </select>
-            <select class="boost-select" id="wowo">
-                <option ng-repeat="division in bboost.divisions"  value="{{division.value}}">
-                    {{division.division}}
-                </option>
-            </select>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <h4>Price</h4>
-        <button ng-click="checkPrice()">Cena to:</button>
+            Price:{{price}}
 
-    </div>
-    <div class="clearfix"></div>
+
+        </div>
+        <div class="clearfix"></div>
+    </form>
 </div>
 <div class="clearfix"></div>
