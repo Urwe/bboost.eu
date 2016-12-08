@@ -11,47 +11,37 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Cabin|Lato|Montserrat|Oswald|Roboto|Rubik" rel="stylesheet">
-
-
-    <!--FONTS-->
-    <script src="//use.typekit.net/rnx7vwg.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
-
-    <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
-    <!-- fonts end -->
-
-
 </head>
-<body >
-<aside>
-    <h1>
-        <img alt="BBoost elo-boosting company" src="img/whitefrontier.png">
-    </h1>
-
-    <div class="separator"></div>
-
-    <nav ng-controller="teamplatesCtrl as bboost" ng-model="template">
+<body ng-controller="teamplatesCtrl as bboost" ng-model="template">
+<div class="side-nav-menu" role="navigation">
+    <div class="company-logo">
+        <img id="side-nav-company-logo" src="img/whitefrontier.png" alt="bboost.eu elo boosting company logo">
+    </div>
 
 
-        <a ng-click="template=templates[0]">
-            <span>Home</span>
-        </a>
-        <a ng-click="template=templates[0]">
-            <span>Boosting</span>
-        </a>
-        <a ng-click="template=templates[0]">
-            <span>FAQ</span>
-        </a>
-        <a ng-click="template=templates[0]">
-            <span>Contact</span>
-        </a>
-        <a ng-click="template=templates[0]">
-            <span>News</span>
-        </a>
-        
+    <div class="webpage-navigation" >
+        <button class="webpage-nav-button" ng-click="template=templates[0]">Home</button>
+        <button class="webpage-nav-button boosting-link" ng-click="template=templates[1]">Boosting</button>
+        <button class="webpage-nav-button" ng-click="template=templates[4]">FAQ</button>
+        <button class="webpage-nav-button" ng-click="template=templates[6]">Contact</button>
+        <button class="webpage-nav-button" ng-click="template=templates[7]">About Us</button>
+    </div>
+    <div class="col-xs-12 social">
+        <div class="col-xs-4 social-button">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-4 social-button">
+            <i class="fa fa-skype" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-4 social-button">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+    </div>
 
-    </nav>
-</aside>
+</div>
+<div class="main-content">
+    <div class="home"  ng-include="template.url"></div>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

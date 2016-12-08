@@ -10,7 +10,9 @@ html{
 }
 
 body{
-  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+  font-family: "refrigerator-deluxe";
+  font-weight: 700;
   color: @sand;
   width: 100%;
   max-width: 100%;
@@ -19,87 +21,8 @@ body{
   button{
     outline: none !important;
   }
-
-
-  .side-nav-menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: @sidebar-width;
-    height: 100%;
-    background: url("../img/black-bg-2.jpg")no-repeat center ;
-    background-size: cover;
-    float: left;
-    .company-logo{
-      img{
-        width: 50%;
-        .center;
-        display: block;
-        margin-top:@side-nav-menu-margins * 2;
-      }
-    }
-    .webpage-navigation{
-      .center;
-      width: 150px;
-      margin: @side-nav-menu-margins*2  0 0 0;
-      width: 100%;
-
-
-      .webpage-nav-button{
-        height: 50px;
-        border: none;
-        border-bottom:1px solid @orange;
-        background: linear-gradient(to right, transparent 50%, @orange 50%);
-        background-size: 200% 100%;
-        background-position:left bottom;
-        text-align: center;
-        line-height: 20px;
-        font-size: 17px;
-        width: 100%;
-        font-family: 'Oswald', sans-serif;
-      }
-      .webpage-nav-button:last-of-type{
-        border-bottom: none;
-      }
-      .webpage-nav-button:hover{
-        animation: navbar-button-animation 0.5s forwards;
-        -webkit-animation: navbar-button-animation 0.5s forwards;
-        -webkit-animation-timing-function: ease;
-        text-decoration: none;
-        color: white;
-      }
-      .boosting-link{
-        color: @orange;
-      }
-    }
-    .social{
-      position: absolute;
-      bottom: @side-nav-menu-margins;
-      padding-left: 37px;
-      padding-right: 38px;
-      color: @orange;
-      .center;
-      .social-button{
-        display: block;
-        padding: 0;
-        margin: 5px;
-        width: 25px;
-        height: 25px;
-        border: 2px solid @orange;
-        font-size: 16px;
-        position: relative;
-        cursor: pointer;
-        i{
-          display: block;
-          position: absolute;
-          top:50%;
-          left:50%;
-          transform: translate(-50%,-50%);
-        }
-      }
-    }
-  }
 }
+
 
 //region main-page
 .main-content{
@@ -123,31 +46,31 @@ body{
     .tab1{
       height: 100%;
       position: relative;
-      background: url("../img/cup2_banner.png") no-repeat center ;
+      background: url("../img/league-of-legends-background.png") no-repeat center ;
       background-size: cover;
-      filter: grayscale(90%);
+      filter: grayscale(80%);
       &:hover{
-        filter:grayscale(10%);
+        filter:grayscale(60%);
       }
     }
     .tab2{
       height: 50%;
       position: relative;
-      background: url("../img/ImmortalsCrowd.png") no-repeat center;
+      background: url("../img/rengar.jpg") no-repeat center;
       background-size: cover;
-      filter: grayscale(90%);
+      filter: grayscale(80%);
       &:hover{
-        filter:grayscale(10%);
+        filter:grayscale(40%);
       }
     }
     .tab3{
       height: 50%;
       position: relative;
-      background: url("../img/origen.jpg") no-repeat center ;
+      background: url("../img/lucian.png") no-repeat center ;
       background-size: cover;
-      filter: grayscale(95%);
+      filter: grayscale(80%);
       &:hover{
-        filter:grayscale(10%);
+        filter:grayscale(40%);
       }
     }
 
